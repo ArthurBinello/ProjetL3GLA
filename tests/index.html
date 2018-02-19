@@ -1,0 +1,33 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script type="text/javascript" src="scripts/jquery.min.js"></script>
+		<script type="text/javascript">
+			var request = new XMLHttpRequest();
+			var cle = "AIzaSyA2PDrfTTbXNZKOn15K-VbWgLfdTevM3qw";
+			var adresse = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.855218,2.368622&radius=500&type=restaurant&name=burger&key=" + cle;
+
+			function search() {
+				request.open("GET", adresse, true);
+				request.responseType = 'json';
+				request.send();
+				request.addEventListener("readystatechange", alertResult, false);
+			}
+
+			function searcha() {
+				document.getElementById("demo").innerHTML = "Hello World";
+			}
+
+			function alertResult(e) {
+				alert(request.readyState + " | " + request.status);
+				if(request.readyState == 4 && request.status == 200){
+					alert(request.responseText);
+				}
+			}
+		</script>
+
+		<button onclick="search()">Click me</button>
+		<p id="demo"></p>
+	</body>
+</html>
