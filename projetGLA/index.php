@@ -27,7 +27,7 @@
 							<div id="d">
                             <input type="text" name="nom_0" value="nom_0"> 
                             </div>
-                            <input type="button" id="b" value="ajouter invité" class="btn"/><br/><br/>
+                            <input type="button" id="b" value="Ajouter un invité" class="btn"/><br/><br/>
 						<label>Votre adresse:</label>
 						    <div id="a">
 							<input type="text" name="adr_0" value="adresse_0"><br/><br/>
