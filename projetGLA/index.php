@@ -107,7 +107,7 @@
 					    <br/><br/>
 						
 						
-						<p><input type="submit" value="Départez" class="btn"></p>
+						<p><input type="submit" value="Départ" class="btn"></p>
 						
 				</form>
 				       
