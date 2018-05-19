@@ -88,7 +88,7 @@
                        
 
 						
-						<label>Durée estimez:</label>
+						<label>Durée estimée:</label>
 						<input type="text" name="duree"><br/><br/>
 						<label>Préference alimentaire:</label>
 						<select name ="preference">
