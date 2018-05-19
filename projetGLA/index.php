@@ -18,7 +18,7 @@
 
 <body id="back">
     <div id="global">
-		<p><img src="images/logo.jpg" alt="logo de quizz" class="logo"></P>
+		<p><img src="images/logo_text.jpg" alt="logo de quizz" class="logo"></P>
 		<h1 class="titre">Sortie à Paris</h1><br/><br>
 		<fieldset>
 			<legend>Sortie à Paris? Départez maintenant!</legend>
