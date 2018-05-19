@@ -33,18 +33,18 @@
 							<input type="text" name="adr_0" value="adresse_0"><br/><br/>
 							</div>
 						<label>Transport choisi:</label>
-						<select>
+						<select name="transport">
                             <option value="voiture">Voiture</option>
                             <option value="metro">Metro</option>
                             <option value="velo">Velo</option>
                             <option value="pied">Pied</option>
                         </select><br/><br/>
 						<label>Date:</label>
-						<input type="text" id="datepicker"></br></br>
+						<input type="text" id="datepicker" name="date"></br></br>
 						
 						<label>Heure de départ:</label> 
 						
-                        <select>
+                        <select name="heure">
                             <option value="one">1</option>
                             <option value="two">2</option>
                             <option value="three">3</option>
@@ -70,7 +70,7 @@
 							<option value="tweentythree">23</option>
                             <option value="tweentyfour">24</option>
                         </select>
-						<select>
+						<select name="minute">
                             <option value="zz">00</option>
                             <option value="zc">05</option>
                             <option value="dix">10</option>
@@ -91,7 +91,7 @@
 						<label>Durée estimez:</label>
 						<input type="text" name="duree"><br/><br/>
 						<label>Préference alimentaire:</label>
-						<select>
+						<select name ="preference">
                             <option value="american">Americain</option>
                             <option value="asiatique">Asiatique</option>
                             <option value="chinois">Chinois</option>
