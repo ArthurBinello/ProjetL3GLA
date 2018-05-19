@@ -21,7 +21,7 @@
 		<p><img src="images/logo_text.jpg" alt="logo de quizz" class="logo"></P>
 		<h1 class="titre">Sortie à Paris</h1><br/><br>
 		<fieldset>
-			<legend>Sortie à Paris? Départez maintenant!</legend>
+			<legend>Sortie à Paris? Partez maintenant!</legend>
 				<form action="departez.php" method="post">
 						<label>Votre nom:</label>
 							<div id="d">
