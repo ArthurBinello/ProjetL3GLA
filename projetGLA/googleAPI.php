@@ -24,6 +24,4 @@ function decode_json_to_array($data) {
     return $stack;
 }
 
-decode_json_to_array(nearbysearch(48.856, 2.366, 'restaurant'));
-
 ?>
