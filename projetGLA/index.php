@@ -18,16 +18,17 @@
 
 <body id="back">
     <div id="global">
-		<p><img src="images/logo_text.jpg" alt="logo de quizz" class="logo"></P>
+		<p><img src="images/logo.jpg" alt="logo de quizz" class="logo"></P>
 		<h1 class="titre">Sortie à Paris</h1><br/><br>
 		<fieldset>
-			<legend>Sortie à Paris? Partez maintenant!</legend>
+			<legend>Sortie à Paris? Départez maintenant!</legend>
 				<form action="departez.php" method="post">
 						<label>Votre nom:</label>
 							<div id="d">
                             <input type="text" name="nom_0" value="nom_0"> 
+					       
                             </div>
-                            <input type="button" id="b" value="Ajouter un invité" class="btn"/><br/><br/>
+                            <input type="button" id="b" value="ajouter invité" class="btn"/><br/><br/>
 						<label>Votre adresse:</label>
 						    <div id="a">
 							<input type="text" name="adr_0" value="adresse_0"><br/><br/>
@@ -88,7 +89,7 @@
                        
 
 						
-						<label>Durée estimée:</label>
+						<label>Durée estimez:</label>
 						<input type="text" name="duree"><br/><br/>
 						<label>Préference alimentaire:</label>
 						<select name ="preference">
@@ -107,27 +108,26 @@
 					    <br/><br/>
 						
 						
-						<p><input type="submit" value="Départ" class="btn"></p>
+						<p><input type="submit" value="Départez" class="btn"></p>
 						
 				</form>
 				       
-		</fieldset>
-
-<script type="text/javascript">
-    $( "#timepicker" ).timepicker();
-</script>		
+		</fieldset>	
 
 
 </body>
 
 
 
+
 <script language="javascript">
-i = 1;
+
+var i = 1;
 document.getElementById("b").onclick=function(){
-  document.getElementById("d").innerHTML+='<div id="div_'+i+'"><input name="text" name="text_'+i+'" type="text" value="nom_'+i+'"  />&nbsp<input type="button" value="Supprimer"  onclick="del('+i+')" class="btn"/></div>';
-  document.getElementById("a").innerHTML+='<div id="div_'+i+'"><input name="text" name="adr_'+i+'" type="text" value="adresse_'+i+'"  /></div>';
+  document.getElementById("d").innerHTML+='<div id="div_'+i+'"><input type="text" name="nom_'+i+'"  value="nom_'+i+'"  />&nbsp<input type="button" value="Supprimer"  onclick="del('+i+')" class="btn"/></div>';
+  document.getElementById("a").innerHTML+='<div id="div_'+i+'"><input type="text" name="adr_'+i+'"  value="adresse_'+i+'"  /></div>';
   i = i + 1;
+
 }
 
 function del(o){
@@ -136,4 +136,5 @@ function del(o){
  
 }
 </script>
+
 </html>
