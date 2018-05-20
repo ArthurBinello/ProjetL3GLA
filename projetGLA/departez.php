@@ -25,8 +25,8 @@ $adr[$i]=$_POST["adr_0"];
 while($nom[$i]!=''&&$adr[$i]!=''){
 	
 	//tester si ca marche bien
-	echo $nom[$i];
-	echo $adr[$i];
+	//echo $nom[$i];
+	//echo $adr[$i];
 	$i++;
 	
     if((!isset($_POST["nom_".$i]))||(!isset($_POST["adr_".$i]))){
