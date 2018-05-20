@@ -2,7 +2,7 @@
 
 function nearbysearch($lat, $lng, $type){
 	$key = "AIzaSyA2PDrfTTbXNZKOn15K-VbWgLfdTevM3qw";
-	$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$lat.",".$lng."&radius=500&type=".$type."&key=" . $key;
+	$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$lat.",".$lng."&radius=500&type=".urlencode($type)."&key=" . $key;
 	$json = file_get_contents($url);
 	return $json;
 }
