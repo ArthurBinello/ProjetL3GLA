@@ -12,21 +12,28 @@ include 'bd.php';
 
 
 //si l'utilisateur sortie avec plusieurs amis et engregister les infos dans le BD
+//creer 2 tableau pour enregistrer les noms et les adresses
+
+$nom=array();
+$adr=array();
+
 $i=0;
 
-$nom=$_POST["nom_0"];
-$adr=$_POST["adr_0"];
-while($nom!=''&&$adr!=''){
+$nom[$i]=$_POST["nom_0"];
+$adr[$i]=$_POST["adr_0"];
+
+while($nom[$i]!=''&&$adr[$i]!=''){
 	
-	echo $nom;
-	echo $adr;
+	//tester si ca marche bien
+	echo $nom[$i];
+	echo $adr[$i];
 	$i++;
 	
     if((!isset($_POST["nom_".$i]))||(!isset($_POST["adr_".$i]))){
 		break;
 	}else{
-		$nom=$_POST["nom_".$i];
-		$adr=$_POST["adr_".$i];
+		$nom[$i]=$_POST["nom_".$i];
+		$adr[$i]=$_POST["adr_".$i];
 	}
 	
 }
