@@ -90,7 +90,22 @@
 
 						
 						<label>Durée estimez:</label>
-						<input type="text" name="duree"><br/><br/>
+						<select name="duree">
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+							<option value="five">5</option>
+                            <option value="six">6</option>
+                            <option value="seven">7</option>
+							<option value="eight">8</option>
+                            <option value="nine">9</option>
+							<option value="ten">10</option>
+                            <option value="eleven">11</option>
+                            <option value="twelve">12</option>
+                        </select>
+						</br></br>
+						
 						<label>Préference alimentaire:</label>
 						<select name ="preference">
                             <option value="american">Americain</option>
