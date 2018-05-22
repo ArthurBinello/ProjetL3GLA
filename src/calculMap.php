@@ -61,7 +61,7 @@ function dureeTrajet($transport, $distance){
 	$duree /= 60;
 	$duree = ceil($duree / 5) * 5;
 
-	return duree;
+	return $duree;
 }
 
 ?>
