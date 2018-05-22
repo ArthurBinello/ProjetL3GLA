@@ -17,11 +17,11 @@ function prochainElem($liste, $index){
 //retourne un groupe de 3 sorties de type différent
 function choixSorties($lat, $lng, $sortie1, $sortie2, $sortie3){
 	$sorties = array();
-	$event1 = decode_json_to_array(nearbysearch($lat, $lng, $sortie1));
+	$event1 = choixLieux($lat, $lng, $sortie1);
 	array_push($sorties, $event1);
-	$event2 = decode_json_to_array(nearbysearch($lat, $lng, $sortie2));
+	$event2 = choixLieux($lat, $lng, $sortie2);
 	array_push($sorties, $event2);
-	$event3 = decode_json_to_array(nearbysearch($lat, $lng, $sortie3));
+	$event3 = choixLieux($lat, $lng, $sortie3);
 	array_push($sorties, $event3);
 
 	return $sorties;
