@@ -13,15 +13,12 @@ $cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","root","");
 
 //insert to sortir(c'est l'invite).
 
-
-function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $preference2, $lieu2, $preference3, $lieu3){
-	global $cnx;
-	//Hachage du mot de passe 
-
-	for($i = 0; $i<sizeof($nom); $i++){
-			$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree,lieu1, preference1, lieu2,preference2,lieu3,preference3) VALUES(:l_idsr, :nom[$i], :adr[$i], :transport, :date, :heure, :minute, :duree, :lieu1, :preference1, :lieu2, :preference2, :lieu3, :preference3 )');
+function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $lieu2,$preference2, $lieu3, $preference3){
+		global $cnx;
+		
+		for($i = 0; $i<sizeof($nom); $i++){
+			$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree,lieu1, preference1, lieu2,preference2,lieu3,preference3) VALUES(:l_idsr, :nom[$i], :adr[$i], :transport, :date, :heure, :minute, :duree, :lieu1,:preference1,:lieu2,:preference2,:lieu3,:preference3 )');
 			$query->bindValue(':idsr',$l_idsr, PDO::PARAM_STR);
-			$l_idsr = $l_idsr+1;
 			$query->bindValue(':nom',$nom[$i], PDO::PARAM_STR);
 			$query->bindValue(':adresse',$adr[$i], PDO::PARAM_STR);
 			$query->bindValue(':transport',$transport, PDO::PARAM_STR);
@@ -35,6 +32,7 @@ function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree,
 			$query->bindValue(':preference2', $preference2, PDO::PARAM_STR);
 			$query->bindValue(':lieu3', $lieu3, PDO::PARAM_STR);
 			$query->bindValue(':preference3', $preference3, PDO::PARAM_STR);
+			
 			$query->execute();
 		}
 	}
@@ -57,7 +55,7 @@ function sortie($l_ids, $activite1, $activite2, $activite3){
 
 //insert to adresse.
 function adresse($l_idadr, $adr){
-		global $cnx;
+		global $cnx;	
 
 		$query = $cnx->prepare('INSERT INTO adresse(idadr, adresse)VALUES(:l_idadr, :adr)');
 		$query->bindValue(':l_idadr',$adr, PDO::PARAM_STR);
