@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2018 at 10:35 AM
+-- Generation Time: May 22, 2018 at 12:22 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -166,6 +166,36 @@ CREATE TABLE IF NOT EXISTS `temps` (
   `minute` int(10) NOT NULL,
   PRIMARY KEY (`idt`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tempsmoyenpourleslieux`
+--
+
+CREATE TABLE IF NOT EXISTS `tempsmoyenpourleslieux` (
+  `lieuType` varchar(10) NOT NULL,
+  `tempsSurPlace` int(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tempsmoyenpourleslieux`
+--
+
+INSERT INTO `tempsmoyenpourleslieux` (`lieuType`, `tempsSurPlace`) VALUES
+('Resto Chin', 30),
+('McDonald', 30),
+('KFC', 30),
+('Kebab', 30),
+('Resto fran', 120),
+('Resto itel', 60),
+('Resto Japo', 30),
+('Cafe', 30),
+('Piscine', 30),
+('Bar', 30),
+('Club', 120),
+('Cinema', 120),
+('Opera', 120);
 
 -- --------------------------------------------------------
 
