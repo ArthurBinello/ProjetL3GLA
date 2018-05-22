@@ -1,5 +1,5 @@
 <?php
-$dbms = 'mysql';
+/*$dbms = 'mysql';
 $user = 'root';
 $pwd='';
 $host = 'localhost';
@@ -8,36 +8,47 @@ $bdName = 'pgla';
 $dsn="$dbms:host=$host;dbname=$dbName";
 //Connexion à la base de données avec PDO
 //$cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","","");
-$cnx=new PDO("$dsn,$user,$pwd");
+$cnx=new PDO("$dsn,$user,$pwd");*/
+$cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","root","");
 
 //insert to sortir(c'est l'invite).
-function sortir($l_idsr, $nom,$adr, $transport, $date, $heure, $minute, $duree, $preference){
+function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference1, $lieu1, $preference2, $lieu2, $preference3, $lieu3){
 		global $cnx;
 		//Hachage du mot de passe 
-		
-		$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree, preference) 
-							   VALUES(:l_idsr, :nom, :adresse, :transport, :date, :heure, :minute, :duree, :preference )');
-		$query->bindValue(':idsr',$l_idsr, PDO::PARAM_STR);
-		$query->bindValue(':nom',$nom, PDO::PARAM_STR);
-		$query->bindValue(':adresse',$adr, PDO::PARAM_STR);
-		$query->bindValue(':transport',$transport, PDO::PARAM_STR);
-		$query->bindValue(':date',$date, PDO::PARAM_STR);
-		$query->bindValue(':heure',$heure, PDO::PARAM_STR);
-		$query->bindValue(':minute', $minute, PDO::PARAM_STR);
-		$query->bindValue(':duree',$duree, PDO::PARAM_STR);
-		$query->bindValue(':preference', $preference, PDO::PARAM_STR);
-		$query->execute();
+
+		for($i = 0; $i<sizeof($nom); $i++){
+			$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree, preference) VALUES(:l_idsr, :nom[$i], :adresse[$i], :transport, :date, :heure, :minute, :duree, :preference )');
+			$query->bindValue(':idsr',$l_idsr, PDO::PARAM_STR);
+			$idsr++;
+			$query->bindValue(':nom',$nom[i], PDO::PARAM_STR);
+			$query->bindValue(':adresse',$adr[i], PDO::PARAM_STR);
+			$query->bindValue(':transport',$transport, PDO::PARAM_STR);
+			$query->bindValue(':date',$date, PDO::PARAM_STR);
+			$query->bindValue(':heure',$heure, PDO::PARAM_STR);
+			$query->bindValue(':minute', $minute, PDO::PARAM_STR);
+			$query->bindValue(':duree',$duree, PDO::PARAM_STR);
+			$query->bindValue(':preference1', $preference, PDO::PARAM_STR);
+			$query->bindValue(':lieu1', $lieu1, PDO::PARAM_STR);
+			$query->bindValue(':preference2', $preference2, PDO::PARAM_STR);
+			$query->bindValue(':lieu2', $lieu2, PDO::PARAM_STR);
+			$query->bindValue(':preference3', $preference3, PDO::PARAM_STR);
+			$query->bindValue('lieu3', $lieu3, PDO::PARAM_STR);
+			$query->execute();
+		}
 	}
-//insert to sortie.(n'est pas sortir comme cela en dessus.)
-function sortie($l_ids, $activite1, $sctivite2, $activite3){
+//insert to sortie.(n'est pas "sortir" comme cela en dessus.)
+function sortie($l_ids, $activite1, $preference1, $activite2, $preference2, $activite3, $preference3){
 		global $cnx;
 		
 		$query = $cnx->prepare('INSERT INTO sortie(ids,activite1, activite2, activite3) 
 							   VALUES(:l_ids, :activite1, :activite2, :activite3)');
 		$query->bindValue(':ids',$l_ids, PDO::PARAM_STR);
 		$query->bindValue(':activite1',$activite1, PDO::PARAM_STR);
+		$query->bindValue(':preference1',$preference1, PDO::PARAM_STR);
 		$query->bindValue(':activite2',$activite2, PDO::PARAM_STR);
-		$query->bindValue(':activite3',$activite3, PDO::PARAM_STR);
+		$query->bindValue(':preference2',$preference2, PDO::PARAM_STR);
+		$query->bindValue(':activite2',$activite2, PDO::PARAM_STR);
+		$query->bindValue(':preference3',$preference3, PDO::PARAM_STR);
 		$query->execute();
 }
 
@@ -85,18 +96,19 @@ function preference($l_idp, $nomPreference){
 }
 
 //insert to activite.
-function activite($l_ida, $nom, $lieuActivite, $heure_duree_estimee, $minute_duree_estimee, $heure_temps_transport, $minute_temps_transport, $heure_temps_reste, $minute_temps_reste){
+function activite($l_ida, $l_idsr, $nom, $lieuActivite, $heure_duree_estimee, $minute_duree_estimee, $heure_temps_transport, $minute_temps_transport, $heure_temps_reste, $minute_temps_reste){
 		global $cnx;
 
-		$query = $cnx->prepare('INSERT INTO activite(ida, nom, lieuActivite, heure_duree_estimee, minute_duree_estimee, heure_temps_transport, minute_temps_transport, heure_temps_reste, minute_temps_reste)VALUES(:l_ida, :nom, :lieuActivite, :heure_duree_estimee, :minute_duree_estimee, :heure_temps_transport, :minute_temps_transport, :heure_temps_reste, :minute_temps_reste)');
-		$query->bindValue(':idp',$l_idp, PDO::PARAM_STR);
+		$query = $cnx->prepare('INSERT INTO activite(ida, idsr, nom, lieuActivite, heure_duree_estimee, minute_duree_estimee, heure_temps_transport, minute_temps_transport, heure_temps_reste, minute_temps_reste)VALUES(:l_ida, :l_idsr, :nom, :lieuActivite, :heure_duree_estimee, :minute_duree_estimee, :heure_temps_transport, :minute_temps_transport, :heure_temps_reste, :minute_temps_reste)');
+		$query->bindValue(':ida',$l_ida, PDO::PARAM_STR);
+		$query->bindValue(':idsr',$l_idsr, PDO::PARAM_STR);//phpmyadmin里面需要加外键属性。
 		$query->bindValue(':nom',$nom, PDO::PARAM_STR);
 		$query->bindValue(':lieuActivite',$lieuActivite, PDO::PARAM_STR);
-		$query->bindValue(':heure_duree_estimee',$heure_duree_estimee PDO::PARAM_STR);
+		$query->bindValue(':heure_duree_estimee',$heure_duree_estimee, PDO::PARAM_STR);
 		$query->bindValue(':minute_duree_estimee',$minute_duree_estimee, PDO::PARAM_STR);
 		$query->bindValue(':heure_temps_transport',$heure_temps_transport, PDO::PARAM_STR);
 		$query->bindValue(':minute_temps_transport',$minute_temps_transport, PDO::PARAM_STR);
-		$query->bindValue(':heure_temps_reste',$, PDO::PARAM_STR);
+		$query->bindValue(':heure_temps_reste',$heure_temps_reste, PDO::PARAM_STR);
 		$query->bindValue(':minute_temps_reste',$minute_temps_reste, PDO::PARAM_STR);	
 		$query->execute();
 }
@@ -128,7 +140,7 @@ function lieuxDeja($l_idldeja, $nomLieu, $genre){
 		$query->execute();
 }
 
-//Verifier si le lieu est dans leiuDeja.
+//Verifier si le lieu est dans lieuDeja.
 function siLieuDeja($le_nomLieu, $le_genre){
 		$sql="select * from lieudeja where nomLieu=$le_nomLieu and genre='$le_genre'";  
 		$result=mysql_query($sql);  
@@ -145,23 +157,5 @@ function siLieuDeja($le_nomLieu, $le_genre){
 		        }  
 
 }
-
-
-
-/*function silieudeja($nomlieu, $genre){
-	global $cnx;
-
-	$lieux = array();
-	$index=0;
-	while($unlieu=$listelieu->fetch(PDO::FETCH_OBJ))
-	{
-		$lieux[$index]["nomlieu"]=$unlieu->nomlieu;
-		$lieux[$index]["genre"]=$unlieu->genre;
-		$index++;
-	}
-	//on ferme le curseur
-	$listelieu->CloseCursor();
-
-}*/
 
 ?>
