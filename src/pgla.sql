@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2018 at 04:11 PM
+-- Generation Time: May 22, 2018 at 08:44 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -122,9 +122,9 @@ CREATE TABLE IF NOT EXISTS `preference` (
 
 CREATE TABLE IF NOT EXISTS `sortie` (
   `ids` int(5) NOT NULL,
-  `activite1` varchar(20) NOT NULL,
-  `activite2` varchar(20) NOT NULL,
-  `activite3` varchar(20) NOT NULL,
+  `activite1` varchar(500) NOT NULL,
+  `activite2` varchar(500) NOT NULL,
+  `activite3` varchar(500) NOT NULL,
   PRIMARY KEY (`ids`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -143,7 +143,12 @@ CREATE TABLE IF NOT EXISTS `sortir` (
   `heure` varchar(100) DEFAULT NULL,
   `minute` varchar(100) DEFAULT NULL,
   `duree` varchar(100) DEFAULT NULL,
-  `preference` varchar(1000) DEFAULT NULL,
+  `lieu1` varchar(100) NOT NULL,
+  `preference1` varchar(1000) DEFAULT NULL,
+  `lieu2` varchar(100) NOT NULL,
+  `preference2` varchar(100) NOT NULL,
+  `lieu3` varchar(100) NOT NULL,
+  `preference3` varchar(100) NOT NULL,
   PRIMARY KEY (`idsr`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -151,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `sortir` (
 -- Dumping data for table `sortir`
 --
 
-INSERT INTO `sortir` (`idsr`, `nom`, `adresse`, `transport`, `date`, `heure`, `minute`, `duree`, `preference`) VALUES
-(0, 'nom_0', 'adresse_0', 'voiture', '', 'one', 'zz', '', 'american');
+INSERT INTO `sortir` (`idsr`, `nom`, `adresse`, `transport`, `date`, `heure`, `minute`, `duree`, `lieu1`, `preference1`, `lieu2`, `preference2`, `lieu3`, `preference3`) VALUES
+(0, 'nom_0', 'adresse_0', 'voiture', '', 'one', 'zz', '', '', 'american', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -174,7 +179,8 @@ CREATE TABLE IF NOT EXISTS `temps` (
 --
 
 CREATE TABLE IF NOT EXISTS `tempsmoyenpourleslieux` (
-  `lieuType` varchar(10) NOT NULL,
+  `lieuType` varchar(100) NOT NULL,
+  `preference` varchar(100) NOT NULL,
   `tempsSurPlace` int(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -182,20 +188,20 @@ CREATE TABLE IF NOT EXISTS `tempsmoyenpourleslieux` (
 -- Dumping data for table `tempsmoyenpourleslieux`
 --
 
-INSERT INTO `tempsmoyenpourleslieux` (`lieuType`, `tempsSurPlace`) VALUES
-('Resto Chin', 30),
-('McDonald', 30),
-('KFC', 30),
-('Kebab', 30),
-('Resto fran', 120),
-('Resto itel', 60),
-('Resto Japo', 30),
-('Cafe', 30),
-('Piscine', 30),
-('Bar', 30),
-('Club', 120),
-('Cinema', 120),
-('Opera', 120);
+INSERT INTO `tempsmoyenpourleslieux` (`lieuType`, `preference`, `tempsSurPlace`) VALUES
+('Restaurant', 'Restaurant chinois', 30),
+('Restaurant', 'McDonald', 30),
+('Restaurant', 'KFC', 30),
+('Restaurant', 'Kebab', 30),
+('Restaurant', 'Restaurant Francais', 120),
+('Restaurant', 'Restaurant Italien', 60),
+('Restaurant', 'Restaurant Japonais', 30),
+('Cafe', '', 30),
+('Piscine', '', 30),
+('Bar', '', 30),
+('Club', '', 120),
+('Cinema', '', 120),
+('Opera', '', 120);
 
 -- --------------------------------------------------------
 
