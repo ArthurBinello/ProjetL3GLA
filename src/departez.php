@@ -10,6 +10,7 @@
 include 'bd.php';
 include_once 'calculListe.php';
 include_once 'calculMap.php';
+include 'bd_supplementaire.php';
 
 $idinv = 0;
 $transport=$_POST["transport"];
@@ -65,6 +66,12 @@ $lat = $centre[0];
 $lng = $centre[1];
 $sorties = choixSorties($lat, $lng, $type1, $type2, $type3);
 
+		
+		
+/*fonction qui permet selectionner et afficher le resulata depuis le table Sortie*/	
+afficheResultat(getResultat());
+		
+//appeler des fonctions		
 function ajouteSortie($sorties){
 	function sortie($l_ids, $sorties[0], $sorties[1], $sorties[2]);
 }
@@ -171,8 +178,7 @@ function CreerNouvelleActivite($ida, $t_reste, $lat, $lng, $lieu, $preference, $
 }
 
 ?>
-<form action="resultat.php" method="post">
-<p><input type="submit" value="Validez" class="btn"></p>
-</form>
+
+
 </body>
 </html>
