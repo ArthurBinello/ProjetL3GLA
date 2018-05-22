@@ -8,7 +8,8 @@
 	<body>
 <?php
 include 'bd.php';
-include 'calculListe.php';
+include_once 'calculMap.php';
+include_once 'calculListe.php';
 
 $idinv = 0;
 $transport=$_POST["transport"];
