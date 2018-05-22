@@ -1,6 +1,6 @@
 <?php
 
-include 'calculMap.php';
+include_once 'googleAPI.php';
 
 //retourne le prochain élément dans la liste
 function prochainElem($liste, $index){
