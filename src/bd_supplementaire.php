@@ -54,7 +54,7 @@ function afficherDetail($unDetail){
 //function qui permet "select" les 3 sorties depuis le tableau sortir
 function getResultat(){
 	  global $cnx;
-	  $rqt="select activite1, activite2, activite3 FROM sortir WHERE ids = 1 ";
+	  $rqt="select activite1, activite2, activite3 FROM sortie WHERE ids = 1 ";
 		$liste= $cnx->query($rqt);
 		$liste->setFetchMode(PDO::FETCH_OBJ);
 		$activites = array(); 
