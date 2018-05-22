@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="style1.css" />
  	<title>Sortie à Paris</title>
 	<body>
-	<h3>Voici le resultat:</h3>
+	
 <?php
 			session_start();
 		
