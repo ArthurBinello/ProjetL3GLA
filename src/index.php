@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sortie à Paris</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -19,7 +19,7 @@
 
 <body id="back">
     <div id="global">
-        <p><img src="images/logo.jpg" alt="logo de quizz" class="logo"></P>
+        <p><img src="images/logo_text.jpg" alt="logo de quizz" class="logo"></P>
         <h1 class="titre">Sortie à Paris</h1><br/><br>
         <fieldset>
             <legend>Sortie à Paris? Partez maintenant!</legend>
