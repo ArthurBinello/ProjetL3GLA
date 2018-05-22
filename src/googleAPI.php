@@ -35,10 +35,10 @@ function getCoordinates($address){
 	$stack = array();
 	$status = $results['status'];
 	if ($status == "OK") {
-        $lat = $results['results']['0']['geometry']['location']['lat'];
-        array_push($stack, $lat);
-        $lng = $results['results']['0']['geometry']['location']['lng'];
-        array_push($stack, $lng);
+		$lat = $results['results']['0']['geometry']['location']['lat'];
+		array_push($stack, $lat);
+		$lng = $results['results']['0']['geometry']['location']['lng'];
+		array_push($stack, $lng);
 	}
 	else{
 		echo "ERREUR DE GOOGLE GEOCODE API";
