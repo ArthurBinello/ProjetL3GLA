@@ -69,10 +69,13 @@ function ajouteSortie($sorties){
 }
 
 //ajouter invité.
+$idsr=-1;
 function ajouteSortant($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $lieu2, $preference2, $lieu3, $preference3){
 	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$lieu1, $preference1, $lieu2, $preference2, $lieu3, $preference3);
-	$idsr++;
+	$idsr+=1;
 }
+
+ajouteSortant($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $lieu2, $preference2, $lieu3, $preference3);
 /*
 function ajouteSortant_p2($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference2){
 	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$preference2);
