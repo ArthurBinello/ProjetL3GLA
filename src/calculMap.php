@@ -1,6 +1,6 @@
 <?php
 
-include 'googleAPI.php';
+include_once 'googleAPI.php';
 
 //Calcule le centre géographique d'un tableau d'adresses
 function centreGeo($adresses){
