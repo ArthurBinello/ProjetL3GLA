@@ -42,7 +42,26 @@ function calculDistance($lat1, $lng1, $lat2, $lng2){
 	return $angle * $earthRadius;
 }
 
-echo "test";
-calculDistance(48.697510, 2.187286, 48.853329, 2.348608);
+//Calcule la durée du trajet en fonction du transport (arrondie en vol d'oiseau)
+function dureeTrajet($transport, $distance){
+	$speed = 1.0;
+	if(strcmp($transport, "voiture") == 0){
+		$speed = 20;
+	}
+	else if(strcmp($transport, "metro") == 0){
+		$speed = 12.5;
+	}
+	else if(strcmp($transport, "velo") == 0){
+		$speed = 4.2;
+	}
+	else{ //a pied
+		$speed = 1.4;
+	}
+	$duree = $distance / $speed;
+	$duree /= 60;
+	$duree = ceil($duree / 5) * 5;
+
+	return duree;
+}
 
 ?>
