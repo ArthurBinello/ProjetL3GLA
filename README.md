@@ -13,6 +13,10 @@ Description blablabla
 
 Execution blablabla
 
+```
+Exemple code
+```
+
 ## Contributeurs
 
 * Mo Rui
