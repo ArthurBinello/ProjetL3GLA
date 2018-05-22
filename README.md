@@ -12,11 +12,9 @@ Ce projet permet de réaliser des sorties groupées gerées par un organisateur.
 * [Google Geocoding](https://developers.google.com/maps/documentation/geocoding/intro) - Recherche et calcul d'adresse
 
 ## Execution/Compilation
-
-Execution blablabla
-
+### Création de la base de données :
 ```
-Exemple code
+http://localhost/phpmyadmin/ > New > Import > Choose File > pgla.sql > Go
 ```
 
 ## Contributeurs
