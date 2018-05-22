@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 01:11 PM
+-- Generation Time: May 22, 2018 at 10:35 AM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `activite` (
+  `idsr` int(5) NOT NULL,
   `ida` int(5) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `lieuActivite` varchar(1000) NOT NULL,
@@ -85,7 +86,6 @@ CREATE TABLE IF NOT EXISTS `lieu` (
   `minute_heureOuverture` int(10) NOT NULL,
   `heure_heureFermeture` int(10) NOT NULL,
   `minute_heureFermeture` int(10) NOT NULL,
-  `platPrincipal` varchar(100) NOT NULL,
   PRIMARY KEY (`idl`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -135,6 +135,7 @@ CREATE TABLE IF NOT EXISTS `sortie` (
 --
 
 CREATE TABLE IF NOT EXISTS `sortir` (
+  `idsr` int(5) NOT NULL,
   `nom` varchar(1000) DEFAULT NULL,
   `adresse` varchar(1000) DEFAULT NULL,
   `transport` varchar(100) DEFAULT NULL,
@@ -142,15 +143,16 @@ CREATE TABLE IF NOT EXISTS `sortir` (
   `heure` varchar(100) DEFAULT NULL,
   `minute` varchar(100) DEFAULT NULL,
   `duree` varchar(100) DEFAULT NULL,
-  `preference` varchar(1000) DEFAULT NULL
+  `preference` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`idsr`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sortir`
 --
 
-INSERT INTO `sortir` (`nom`, `adresse`, `transport`, `date`, `heure`, `minute`, `duree`, `preference`) VALUES
-('nom_0', 'adresse_0', 'voiture', '', 'one', 'zz', '', 'american');
+INSERT INTO `sortir` (`idsr`, `nom`, `adresse`, `transport`, `date`, `heure`, `minute`, `duree`, `preference`) VALUES
+(0, 'nom_0', 'adresse_0', 'voiture', '', 'one', 'zz', '', 'american');
 
 -- --------------------------------------------------------
 
