@@ -108,18 +108,19 @@
 						
 						<label>Préference alimentaire:</label>
 						<select name ="preference">
-                            <option value="aucune">Aucune</option>
-                            <option value="american">Americain</option>
-                            <option value="asiatique">Asiatique</option>
+						    <option value="aucun">Aucun</option>
                             <option value="chinois">Chinois</option>
-                            <option value="espagnol">Espagnol</option>
-							<option value="francais">Francais</option>
-                            <option value="grec">Grec</option>
-                            <option value="indien">Indien</option>
+                            <option value="mcdonald">McDonald</option>
+			 				<option value="kfc">KFC</option>
+                            <option value="francais">Francais</option>
+                            <option value="cafe">Cafe</option>
 							<option value="italien">Italien</option>
                             <option value="japonais">Japonais</option>
-							<option value="mediterraneen">Mediterraneen</option>
-                            <option value="thailands">Thailands</option>
+							<option value="piscine">Piscine</option>
+                            <option value="bar">Bar</option>
+							<option value="cinema">Cinema</option>
+							<option value="club">Club</option>
+							<option value="opera">Opera</option>
                         </select>
 					    <br/><br/>
 						
