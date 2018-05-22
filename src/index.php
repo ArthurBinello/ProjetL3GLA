@@ -106,23 +106,67 @@
                         </select>
 						</br></br>
 						
-						<label>Préference alimentaire:</label>
-						<select name ="preference">
-						    <option value="aucun">Aucun</option>
-                            <option value="chinois">Chinois</option>
-                            <option value="mcdonald">McDonald</option>
-			 				<option value="kfc">KFC</option>
-                            <option value="francais">Francais</option>
+						<label>Lieu1:</label>
+						<select name ="lieu1" id="lieu1">
+						    <option value="aucune">Aucune</option>
+                            <option value="restaurant" onclick="select()">Restaurant</option>
                             <option value="cafe">Cafe</option>
-							<option value="italien">Italien</option>
-                            <option value="japonais">Japonais</option>
-							<option value="piscine">Piscine</option>
+                            <option value="piscine">Piscine</option>
                             <option value="bar">Bar</option>
 							<option value="cinema">Cinema</option>
 							<option value="club">Club</option>
 							<option value="opera">Opera</option>
                         </select>
-					    <br/><br/>
+						<select name ="preference1" > 
+						    <option value="chinois">Chinois</option>
+	                        <option value="mcdonald">McDonald</option>
+			 				<option value="kfc">KFC</option>
+                            <option value="francais">Francais</option>
+							<option value="italien">Italien</option>
+                            <option value="japonais">Japonais</option>
+                        </select>
+						<br/><br/>
+						<label>Lieu2:</label>
+						<select name ="lieu32 id="lieu2">
+						    <option value="aucune">Aucune</option>
+                            <option value="restaurant" onclick="select()">Restaurant</option>
+                            <option value="cafe">Cafe</option>
+                            <option value="piscine">Piscine</option>
+                            <option value="bar">Bar</option>
+							<option value="cinema">Cinema</option>
+							<option value="club">Club</option>
+							<option value="opera">Opera</option>
+                        </select>
+						<select name ="preference2" > 
+						    <option value="chinois">Chinois</option>
+	                        <option value="mcdonald">McDonald</option>
+			 				<option value="kfc">KFC</option>
+                            <option value="francais">Francais</option>
+							<option value="italien">Italien</option>
+                            <option value="japonais">Japonais</option>
+                        </select>
+						 <br/><br/>
+						<label>Lieu3:</label>
+						<select name ="lieu3" id="lieu3">
+						    <option value="aucune">Aucune</option>
+                            <option value="restaurant" onclick="select()">Restaurant</option>
+                            <option value="cafe">Cafe</option>
+                            <option value="piscine">Piscine</option>
+                            <option value="bar">Bar</option>
+							<option value="cinema">Cinema</option>
+							<option value="club">Club</option>
+							<option value="opera">Opera</option>
+                        </select>
+						<select name ="preference3" > 
+						    <option value="chinois">Chinois</option>
+	                        <option value="mcdonald">McDonald</option>
+			 				<option value="kfc">KFC</option>
+                            <option value="francais">Francais</option>
+							<option value="italien">Italien</option>
+                            <option value="japonais">Japonais</option>
+                        </select>
+						 <br/><br/>
+						
 						
 						
 						<p><input type="submit" value="Départez" class="btn"></p>
@@ -138,6 +182,12 @@
 
 
 <script language="javascript">
+function select(){
+	
+		document.getElementById("preference").disabled=false
+	}
+	
+}
 
 var i = 1;
 document.getElementById("b").onclick=function(){
