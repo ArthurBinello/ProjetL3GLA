@@ -38,4 +38,13 @@ function preferenceAlim($lat, $lng, $preference){
 	return $restaurants;
 }
 
+function choixLieux($lat, $lng, $type){
+	$preferences = array("aucune", "mcdonald", "kfc", "chinois", "francais", "italien", "japonais");
+	if(in_array($type, $preferences)){
+		return preferenceAlim($lat, $lng, $type);
+	}
+
+	return decode_json_to_array(nearbysearch($lat, $lng, $type));
+}
+
 ?>
