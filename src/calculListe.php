@@ -50,7 +50,7 @@ function choixLieux($lat, $lng, $type){
 
 //retourne le type d'activite
 function selectType($type, $alimentaire){
-	if(strcmp($type, "restaurant") == 0)){
+	if(strcmp($type, "restaurant") == 0){
 		return $alimentaire;
 	}
 	return $type;

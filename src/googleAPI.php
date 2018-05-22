@@ -6,7 +6,7 @@ function nearbysearch($lat, $lng, $type){
 	$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$lat.",".$lng."&radius=500&type=".urlencode($type)."&key=" . $key;
 	$json = file_get_contents($url);
 	return $json;
-}
+}//Fatal error: Cannot redeclare nearbysearch() (previously declared in D:\Programming\EasyPHP-DevServer-14.1VC11\data\localweb\googleAPI.php:4) in D:\Programming\EasyPHP-DevServer-14.1VC11\data\localweb\googleAPI.php on line 9
 
 //transforme de résultat JSON de nearbysearch() en tableaux lisibles
 function decode_json_to_array($data) {
