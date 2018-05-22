@@ -10,7 +10,6 @@
 include 'bd.php';
 include_once 'calculListe.php';
 include_once 'calculMap.php';
-include 'bd_supplementaire.php';
 
 $idinv = 0;
 $transport=$_POST["transport"];
@@ -33,7 +32,7 @@ $nom=array();
 $adr=array();
 $i=0;
 array_push($nom, $_POST["nom_0"]);
-array_push($adr, $_POST["adr_0"]);、
+array_push($adr, $_POST["adr_0"]);
 
 while($nom[$i]!=''&&$adr[$i]!=''){
 	
@@ -48,8 +47,7 @@ while($nom[$i]!=''&&$adr[$i]!=''){
 		array_push($nom, $_POST["nom_".$i]);
 		array_push($adr, $_POST["adr_".$i]);
 	}
-	
-	
+		
 }
 /*$transport=$_POST["transport"];
 $date=$_POST["date"];
@@ -66,12 +64,6 @@ $lat = $centre[0];
 $lng = $centre[1];
 $sorties = choixSorties($lat, $lng, $type1, $type2, $type3);
 
-		
-		
-/*fonction qui permet selectionner et afficher le resulata depuis le table Sortie*/	
-afficheResultat(getResultat());
-		
-//appeler des fonctions		
 function ajouteSortie($sorties){
 	function sortie($l_ids, $sorties[0], $sorties[1], $sorties[2]);
 }
@@ -153,17 +145,17 @@ function CreerNouvelleActivite($ida, $t_reste, $lat, $lng, $lieu, $preference, $
 
 	foreach($arrs as $arr){
 		echo $arr['tempsSurPlace'];
-		if($ida = 1){
+		if($ida == 1){
 			if($arr['tempsSurPlace']+60 <= $t_reste){
 				$typeDeLieu = $arr['lieuType'];
 				echo $typeDeLieu;
 			}
-		}elseif($ida = 2){
+		}elseif($ida == 2){
 			if($arr['tempsSurPlace']+30 <= $t_reste){
 				$typeDeLieu = $arr['lieuType'];
 				echo $typeDeLieu;
 			}
-		}elseif($ida = 3){
+		}elseif($ida == 3){
 				if($arr['tempsSurPlace'] <= $t_reste){
 					$typeDeLieu = $arr['lieuType'];
 					echo $typeDeLieu;
@@ -178,7 +170,8 @@ function CreerNouvelleActivite($ida, $t_reste, $lat, $lng, $lieu, $preference, $
 }
 
 ?>
-
-
+<form action="resultat.php" method="post">
+<p><input type="submit" value="Validez" class="btn"></p>
+</form>
 </body>
 </html>
