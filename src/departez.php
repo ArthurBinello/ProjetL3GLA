@@ -65,7 +65,7 @@ $lng = $centre[1];
 $sorties = choixSorties($lat, $lng, $type1, $type2, $type3);
 
 function ajouteSortie($sorties){
-	function sortie($l_ids, $sorties[0], $sorties[1], $sorties[2]);
+	sortie($l_ids, $sorties[0], $sorties[1], $sorties[2]);
 }
 
 function ajouteSortant_p1($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference1){
