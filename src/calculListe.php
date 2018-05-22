@@ -25,4 +25,8 @@ function choixSorties($lat, $lng, $sortie1, $sortie2, $sortie3){
 	return $sorties;
 }
 
+function listeRestaurant($lat, $lng, $preferences){
+		
+}
+
 ?>
