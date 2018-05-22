@@ -15,7 +15,7 @@ function decode_json_to_array($data) {
 	$status = $results['status'];
 	if ($status == "OK") {
 		foreach($results['results'] as $key => $value) {
-			$var = array($value['id'], $value['geometry']['location']['lat'], $value['geometry']['location']['lng'], $value['name'], $value['vicinity'], $value['rating'], $value['place_id']);
+			$var = array($value['id'], $value['geometry']['location']['lat'], $value['geometry']['location']['lng'], $value['name'], $value['vicinity'], $value['place_id']);
 			array_push($stack, $var);
 		}
 	}
