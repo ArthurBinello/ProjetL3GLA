@@ -1,0 +1,30 @@
+#resultat {
+	margin-right: auto;
+	margin-left: auto;
+	width: 30;
+	border: 1px solid black;
+	margin-top: 2%;
+	text-align: center;
+	padding: 1%;
+	line-height: 350%;
+	background-color:#ffe6ff;
+}
+
+body{
+	color: 	#000000;
+	background-color:#E6E6FA;
+	font-family : Helvetica,Arial; 
+}
+
+.btn{
+
+	padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	border-radius:6px;
+	width:130px;
+	border:none;
+	text-align:center;
+
+}
