@@ -4,39 +4,41 @@ $user = 'root';
 $pwd='';
 $host = 'localhost';
 $bdName = 'pgla';
-
 $dsn="$dbms:host=$host;dbname=$dbName";
 //Connexion à la base de données avec PDO
 //$cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","","");
 $cnx=new PDO("$dsn,$user,$pwd");*/
 $cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","root","");
+//insert to sortir(c'est l'invite).
 
 //insert to sortir(c'est l'invite).
-function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $preference2, $lieu2, $preference3, $lieu3){
-//function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference)
-		global $cnx;
-		//Hachage du mot de passe 
 
-		for($i = 0; $i<sizeof($nom); $i++){
-			$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree, preference) VALUES(:l_idsr, :nom[$i], :adresse[$i], :transport, :date, :heure, :minute, :duree, :preference )');
+
+function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $preference2, $lieu2, $preference3, $lieu3){
+	global $cnx;
+	//Hachage du mot de passe 
+
+	for($i = 0; $i<sizeof($nom); $i++){
+			$query = $cnx->prepare('INSERT INTO sortir(idsr,nom,adresse,transport,date,heure,minute,duree,lieu1, preference1, lieu2,preference2,lieu3,preference3) VALUES(:l_idsr, :nom[$i], :adr[$i], :transport, :date, :heure, :minute, :duree, :lieu1, :preference1, :lieu2, :preference2, :lieu3, :preference3 )');
 			$query->bindValue(':idsr',$l_idsr, PDO::PARAM_STR);
-			$idsr++;
-			$query->bindValue(':nom',$nom[i], PDO::PARAM_STR);
-			$query->bindValue(':adresse',$adr[i], PDO::PARAM_STR);
+			$l_idsr = $l_idsr+1;
+			$query->bindValue(':nom',$nom[$i], PDO::PARAM_STR);
+			$query->bindValue(':adresse',$adr[$i], PDO::PARAM_STR);
 			$query->bindValue(':transport',$transport, PDO::PARAM_STR);
 			$query->bindValue(':date',$date, PDO::PARAM_STR);
 			$query->bindValue(':heure',$heure, PDO::PARAM_STR);
 			$query->bindValue(':minute', $minute, PDO::PARAM_STR);
 			$query->bindValue(':duree',$duree, PDO::PARAM_STR);
-			$query->bindValue(':preference1', $preference, PDO::PARAM_STR);
 			$query->bindValue(':lieu1', $lieu1, PDO::PARAM_STR);
-			$query->bindValue(':preference2', $preference2, PDO::PARAM_STR);
+			$query->bindValue(':preference1', $preference1, PDO::PARAM_STR);
 			$query->bindValue(':lieu2', $lieu2, PDO::PARAM_STR);
+			$query->bindValue(':preference2', $preference2, PDO::PARAM_STR);
+			$query->bindValue(':lieu3', $lieu3, PDO::PARAM_STR);
 			$query->bindValue(':preference3', $preference3, PDO::PARAM_STR);
-			$query->bindValue('lieu3', $lieu3, PDO::PARAM_STR);
 			$query->execute();
 		}
 	}
+
 //insert to sortie.(n'est pas "sortir" comme cela en dessus.)
 function sortie($l_ids, $activite1, $activite2, $activite3){
 		global $cnx;
@@ -45,11 +47,11 @@ function sortie($l_ids, $activite1, $activite2, $activite3){
 							   VALUES(:l_ids, :activite1, :activite2, :activite3)');
 		$query->bindValue(':ids',$l_ids, PDO::PARAM_STR);
 		$query->bindValue(':activite1',$activite1, PDO::PARAM_STR);
-		$query->bindValue(':preference1',$preference1, PDO::PARAM_STR);
+		//$query->bindValue(':preference1',$preference1, PDO::PARAM_STR);
 		$query->bindValue(':activite2',$activite2, PDO::PARAM_STR);
-		$query->bindValue(':preference2',$preference2, PDO::PARAM_STR);
+		//$query->bindValue(':preference2',$preference2, PDO::PARAM_STR);
 		$query->bindValue(':activite2',$activite2, PDO::PARAM_STR);
-		$query->bindValue(':preference3',$preference3, PDO::PARAM_STR);
+		//$query->bindValue(':preference3',$preference3, PDO::PARAM_STR);
 		$query->execute();
 }
 
@@ -61,7 +63,7 @@ function adresse($l_idadr, $adr){
 		$query->bindValue(':l_idadr',$adr, PDO::PARAM_STR);
 		$query->bindValue(':adresse',$adr, PDO::PARAM_STR);
 		$query->execute();
-	}
+}
 
 //insert to transport.
 function transport($l_idtr,$modTransport, $h_tsMax, $m_tsMax){
@@ -73,7 +75,7 @@ function transport($l_idtr,$modTransport, $h_tsMax, $m_tsMax){
 		$query->bindValue(':heure_tempSomeMax',$h_tsMax, PDO::PARAM_STR);
 		$query->bindValue(':minute_tempSomeMax',$m_tsMax, PDO::PARAM_STR);
 		$query->execute();
-	}
+}
 
 //insert to temps.
 function temps($l_idt, $heure, $minute){
