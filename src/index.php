@@ -108,7 +108,7 @@
 						
 						<label>Préference alimentaire:</label>
 						<select name ="preference">
-                            <option value="american">Aucune</option>
+                            <option value="aucune">Aucune</option>
                             <option value="american">Americain</option>
                             <option value="asiatique">Asiatique</option>
                             <option value="chinois">Chinois</option>
