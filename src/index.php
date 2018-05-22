@@ -108,7 +108,7 @@
 						
 						<label>Lieu1:</label>
 						<select name ="lieu1" id="lieu1">
-						    <option value="aucune">Aucune</option>
+						   
                             <option value="restaurant" onclick="select()">Restaurant</option>
                             <option value="cafe">Cafe</option>
                             <option value="piscine">Piscine</option>
@@ -117,7 +117,8 @@
 							<option value="club">Club</option>
 							<option value="opera">Opera</option>
                         </select>
-						<select name ="preference1" > 
+						<select name ="preference1" id ="preference1">
+                            <option value="aucune">Aucune</option>						
 						    <option value="chinois">Chinois</option>
 	                        <option value="mcdonald">McDonald</option>
 			 				<option value="kfc">KFC</option>
@@ -128,7 +129,7 @@
 						<br/><br/>
 						<label>Lieu2:</label>
 						<select name ="lieu32 id="lieu2">
-						    <option value="aucune">Aucune</option>
+						    
                             <option value="restaurant" onclick="select()">Restaurant</option>
                             <option value="cafe">Cafe</option>
                             <option value="piscine">Piscine</option>
@@ -138,6 +139,7 @@
 							<option value="opera">Opera</option>
                         </select>
 						<select name ="preference2" > 
+						    <option value="aucune">Aucune</option>
 						    <option value="chinois">Chinois</option>
 	                        <option value="mcdonald">McDonald</option>
 			 				<option value="kfc">KFC</option>
@@ -148,7 +150,7 @@
 						 <br/><br/>
 						<label>Lieu3:</label>
 						<select name ="lieu3" id="lieu3">
-						    <option value="aucune">Aucune</option>
+						    
                             <option value="restaurant" onclick="select()">Restaurant</option>
                             <option value="cafe">Cafe</option>
                             <option value="piscine">Piscine</option>
@@ -158,6 +160,7 @@
 							<option value="opera">Opera</option>
                         </select>
 						<select name ="preference3" > 
+						    <option value="aucune">Aucune</option>
 						    <option value="chinois">Chinois</option>
 	                        <option value="mcdonald">McDonald</option>
 			 				<option value="kfc">KFC</option>
@@ -184,7 +187,7 @@
 <script language="javascript">
 function select(){
 	
-		document.getElementById("preference").disabled=false
+		document.getElementById("preference1").disabled=false
 	}
 	
 }
