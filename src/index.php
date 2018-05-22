@@ -90,7 +90,7 @@
                        
 
                         
-                        <label>Durée estimez:</label>
+                        <label>Durée estimée:</label>
                         <select name="duree">
                             <option value="one">1</option>
                             <option value="two">2</option>
