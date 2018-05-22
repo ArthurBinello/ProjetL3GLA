@@ -9,7 +9,6 @@
 <?php
 include 'bd.php';
 include 'calculListe.php';
-include 'calculMap.php';
 
 $idinv = 0;
 $transport=$_POST["transport"];
