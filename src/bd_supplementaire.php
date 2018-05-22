@@ -1,4 +1,9 @@
 <?php
+
+//connexion a la BD
+$cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","root","");
+
+
 //bd_supplementaire permet selectionner des infos depuis le bd et afficher a l'ecran
 
 
