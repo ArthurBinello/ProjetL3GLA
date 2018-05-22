@@ -76,7 +76,7 @@ function getResultat(){
 //function qui permet affiche le resultat
 function afficheResultat($unResultat){
      echo "<div id=\"blocindex\">";
-	 
+	 echo "<form>";
 		echo "Voici le resultat <br>";
 	    
 
@@ -96,7 +96,7 @@ function afficheResultat($unResultat){
                   }
 			  	
 			
-		
+		echo "</form>";
 		
 		echo "</div>";
 }
