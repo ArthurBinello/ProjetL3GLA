@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css" />
  	<title>Sortie à Paris</title>
 	<body>
 <?php
@@ -36,6 +37,7 @@ while($nom[$i]!=''&&$adr[$i]!=''){
 		$adr[$i]=$_POST["adr_".$i];
 	}
 	
+	
 }
 
 
@@ -48,8 +50,11 @@ $preference=$_POST["preference"];
 
 
 
-//sortir($nom,$adr,$transport,$date,$heure,$minute,$duree, $preference);
+
 
 ?>
+<form action="resultat.php" method="post">
+<p><input type="submit" value="Validez" class="btn"></p>
+</form>
 </body>
 </html>
