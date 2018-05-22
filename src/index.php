@@ -125,6 +125,7 @@
                             <option value="francais">Francais</option>
                             <option value="italien">Italien</option>
                             <option value="japonais">Japonais</option>
+							<option value="kebab">Kebab</option>
                         </select>
                         <br/><br/>
                         <label>Lieu2:</label>
@@ -146,6 +147,7 @@
                             <option value="francais">Francais</option>
                             <option value="italien">Italien</option>
                             <option value="japonais">Japonais</option>
+							<option value="kebab">Kebab</option>
                         </select>
                         <br/><br/><label>Lieu3:</label>
                         <select name ="lieu3" id="lieu3" onchange="select('lieu3', 'preference3')">
@@ -166,6 +168,7 @@
                             <option value="francais">Francais</option>
                             <option value="italien">Italien</option>
                             <option value="japonais">Japonais</option>
+							<option value="kebab">Kebab</option>
                         </select>
                         <br/><br/>
                         
@@ -187,23 +190,19 @@
 function select(elemFrom, elemTo){
     var x = document.getElementById(elemTo);
     if(document.getElementById(elemFrom).value == "restaurant"){
-        x.style.display = 'block';
+        x.style.display = 'inline-block';
     }
     else {
         x.style.display = 'none';
     }
 }
-    
-}
-
+   
 var i = 1;
 document.getElementById("b").onclick=function(){
   document.getElementById("d").innerHTML+='<div id="div_'+i+'"><input type="text" name="nom_'+i+'"  value="nom_'+i+'"  />&nbsp<input type="button" value="Supprimer"  onclick="del('+i+')" class="btn"/></div>';
   document.getElementById("a").innerHTML+='<div id="div_'+i+'"><input type="text" name="adr_'+i+'"  value="adresse_'+i+'"  /></div>';
   i = i + 1;
-
 }
-
 function del(o){
  document.getElementById("d").removeChild(document.getElementById("div_"+o));
  document.getElementById("a").removeChild(document.getElementById("div_"+o));
