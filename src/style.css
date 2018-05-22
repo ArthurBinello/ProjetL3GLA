@@ -5,7 +5,7 @@ html,body{
 body{
 	color: #bfbfbf;
 	background-color:lightyellow;
-	font-family : 'Futura-Medium','Futura';
+	font-family : Helvetica,Arial; 
 }
 
 h1{
@@ -105,10 +105,22 @@ label{
 #back{
 	min-height: 100%;
 	background: url(images/background.jpg);
+	width: 100%;
 	margin: auto;
 	padding: 5px 20px;
-	background-repeat: no-repeat;
-	background-size: cover;
+	
+}
+
+#resultat {
+	margin-right: auto;
+	margin-left: auto;
+	width: 30;
+	border: 1px solid black;
+	margin-top: 2%;
+	text-align: center;
+	padding: 1%;
+	line-height: 350%;
+	background-color:#ffe6ff;
 }
 
 
