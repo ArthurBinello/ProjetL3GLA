@@ -27,14 +27,13 @@ function choixSorties($lat, $lng, $sortie1, $sortie2, $sortie3){
 	return $sorties;
 }
 
-//retourne la liste de tous les restaurants à proximité en fonction des préférences alimentaires
-//$préférences : liste des restaurants désirés
-function listeRestaurant($lat, $lng, $preferences){
-	$restaurants = array();
-	foreach ($preferences as $type) {
-		$resto = decode_json_to_array(nearbysearch($lat, $lng, "restaurant ".$type));
-		array_merge($restaurants, $restaurant);
+//retourne la liste de tous les restaurants à proximité en fonction de la préférence alimentaire
+function preferenceAlim($lat, $lng, $preference){
+	$resto = "restaurant";
+	if(strcmp($preference, "Aucune") !== 0){
+		$resto = $resto." ".$preference;
 	}
+	$restaurants = decode_json_to_array(nearbysearch($lat, $lng, $resto));
 
 	return $restaurants;
 }
