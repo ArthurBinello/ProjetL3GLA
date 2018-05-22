@@ -37,7 +37,7 @@ function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree,
 		}
 	}
 //insert to sortie.(n'est pas "sortir" comme cela en dessus.)
-function sortie($l_ids, $activite1, $preference1, $activite2, $preference2, $activite3, $preference3){
+function sortie($l_ids, $activite1, $activite2, $activite3){
 		global $cnx;
 		
 		$query = $cnx->prepare('INSERT INTO sortie(ids,activite1, activite2, activite3) 
