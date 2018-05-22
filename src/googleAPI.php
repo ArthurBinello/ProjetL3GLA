@@ -42,6 +42,10 @@ function getCoordinates($address){
 	}
 	else{
 		echo "ERREUR DE GOOGLE GEOCODE API";
+		$incase = array();
+		array_push($stack, 0.0);
+		array_push($stack, 0.0);
+		return $incase;
 	}
 	
 	return $stack;
