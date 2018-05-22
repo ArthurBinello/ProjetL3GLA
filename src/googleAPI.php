@@ -1,5 +1,6 @@
 <?php
 
+//retourne les 20 lieux du type les plus proches en JSON
 function nearbysearch($lat, $lng, $type){
 	$key = "AIzaSyA2PDrfTTbXNZKOn15K-VbWgLfdTevM3qw";
 	$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$lat.",".$lng."&radius=500&type=".urlencode($type)."&key=" . $key;
@@ -7,6 +8,7 @@ function nearbysearch($lat, $lng, $type){
 	return $json;
 }
 
+//transforme de résultat JSON de nearbysearch() en tableaux lisibles
 function decode_json_to_array($data) {
 	$stack = array();
 	$results = json_decode($data, true);
@@ -23,6 +25,7 @@ function decode_json_to_array($data) {
 	return $stack;
 }
 
+//retourne la latitude et longitude d'une adresse
 function getCoordinates($address){
 	$key = "AIzaSyA2PDrfTTbXNZKOn15K-VbWgLfdTevM3qw";
 	$url = "https://maps.googleapis.com/maps/api/geocode/json?address=".urlencode($address)."&sensor=false&key=".$key;
