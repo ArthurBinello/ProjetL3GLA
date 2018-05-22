@@ -40,7 +40,7 @@ function preferenceAlim($lat, $lng, $preference){
 
 //retourne la liste des lieux du type et de la préférence si restaurant
 function choixLieux($lat, $lng, $type){
-	$preferences = array("aucune", "mcdonald", "kfc", "chinois", "francais", "italien", "japonais");
+	$preferences = array("aucune", "kebab", "mcdonald", "kfc", "chinois", "francais", "italien", "japonais");
 	if(in_array($type, $preferences)){
 		return preferenceAlim($lat, $lng, $type);
 	}
