@@ -76,25 +76,28 @@ function getResultat(){
 //function qui permet affiche le resultat
 function afficheResultat($unResultat){
      echo "<div id=\"blocindex\">";
-	 echo "<table border='1'>";
-		echo "<tr><th colspan=3>Table de Resultat</th></tr><br>";
-	    echo "<tr>";
-				  echo "<th>Activite 1</th>";
-				  echo "<th>Activite 2</th>";
-				  echo "<th>Activite 3</th>";
-				  echo "</tr>";	
+	 
+		echo "Voici le resultat <br>";
+	    
+
 			 foreach($unResultat as $valeur){
 				  	
-                  echo "<tr>";
-                  echo "<td>".$valeur["activite1"]."</td>"; 
-				  echo "<td>".$valeur["activite2"]."</td>";
-				  echo "<td>".$valeur["activite3"]."</td>";
-                  echo "</tr>";			  
+                  
+                  echo "Activite 1: ".$valeur["activite1"]."&nbsp"; 
+				  echo "<input id=\"change1\" type =\"submit\" value=\"Changez\" onclick=\"change1()\">";
+				  echo "<br>";
+				  echo "Activite 2: ".$valeur["activite2"]."&nbsp"; 
+				  echo "<input id=\"change2\" type =\"submit\" value=\"Changez\" onclick=\"change2()\">";
+				  echo "<br>";
+				  echo "Activite 3: ".$valeur["activite3"]."&nbsp"; 
+				  echo "<input id=\"change3\" type =\"submit\" value=\"Changez\" onclick=\"change3()\">";
+				  echo "<br>";
+                  	  
                   }
 			  	
 			
 		
-		echo "</table>";
+		
 		echo "</div>";
 }
 	?>
