@@ -14,8 +14,13 @@ Ce projet permet de réaliser des sorties groupées gerées par un organisateur.
 ## Execution/Compilation
 ### Création de la base de données :
 ```
-http://localhost/phpmyadmin/ > New > Import > Choose File > pgla.sql > Go
+[http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) > New > Import > Choose File > pgla.sql > Go
 ```
+### Utilisation de l'application :
+```
+[http://localhost/src/](http://localhost/src/) ou [http://localhost/src/index.php](http://localhost/src/index.php)
+```
+Puis suivre les indications de l'application et sa logique.
 
 ## Contributeurs
 
