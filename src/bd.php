@@ -12,7 +12,8 @@ $cnx=new PDO("$dsn,$user,$pwd");*/
 $cnx=new PDO("mysql:host=localhost;dbname=pgla;charset=utf8","root","");
 
 //insert to sortir(c'est l'invite).
-function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference1, $lieu1, $preference2, $lieu2, $preference3, $lieu3){
+function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $preference2, $lieu2, $preference3, $lieu3){
+//function sortir($l_idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference)
 		global $cnx;
 		//Hachage du mot de passe 
 

@@ -7,7 +7,7 @@
  	<title>Sortie à Paris</title>
 	<body>
 <?php
-include 'bd.php';
+include_once 'bd.php';
 include_once 'calculListe.php';
 include_once 'calculMap.php';
 
@@ -68,11 +68,12 @@ function ajouteSortie($sorties){
 	sortie($l_ids, $sorties[0], $sorties[1], $sorties[2]);
 }
 
-function ajouteSortant_p1($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference1){
-	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$preference1);
+//ajouter invité.
+function ajouteSortant($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu1, $preference1, $lieu2, $preference2, $lieu3, $preference3){
+	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$lieu1, $preference1, $lieu2, $preference2, $lieu3, $preference3);
 	$idsr++;
 }
-
+/*
 function ajouteSortant_p2($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $preference2){
 	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$preference2);
 	$idsr++;
@@ -96,7 +97,7 @@ function ajouteSortant_l2($idsr, $nom, $adr, $transport, $date, $heure, $minute,
 function ajouteSortant_l3($idsr, $nom, $adr, $transport, $date, $heure, $minute, $duree, $lieu3){
 	sortir($idsr,$nom,$adr,$transport,$date,$heure,$minute,$duree,$lieu3);
 	$idsr++;
-}
+}*/
 
 //Convertir le temps en minute.--la partie de heure.
 function h_tempsConvertisseurFromMinute($t){
@@ -170,8 +171,8 @@ function CreerNouvelleActivite($ida, $t_reste, $lat, $lng, $lieu, $preference, $
 }
 
 ?>
-<form action="resultat.php" method="post">
+<!--<form action="resultat.php" method="post">
 <p><input type="submit" value="Validez" class="btn"></p>
-</form>
+</form>-->
 </body>
 </html>
